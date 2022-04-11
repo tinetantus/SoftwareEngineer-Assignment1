@@ -3,9 +3,11 @@ import java.util.List;
 public class MenuItem implements MenuItemInterface {
     private double prepTime;
     private double menuPrice;
+    private String itemName;
     private List<IngredientInterface> ingredientList;
 
-    public MenuItem(List<IngredientInterface> ingredientList, double prepTime) {
+    public MenuItem(String itemName, List<IngredientInterface> ingredientList, double prepTime) {
+        this.itemName = itemName;
         this.prepTime = prepTime;
         this.ingredientList = ingredientList;
         for (IngredientInterface ingredient: ingredientList) {
@@ -32,5 +34,10 @@ public class MenuItem implements MenuItemInterface {
     @Override
     public List<IngredientInterface> getIngredientList() {
         return ingredientList;
+    }
+
+    @Override
+    public String getItemName() {
+        return itemName;
     }
 }

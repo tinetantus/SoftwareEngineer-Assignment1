@@ -1,29 +1,27 @@
 public abstract class Customer implements CustomerInterface {
-    private static int runningID = 0; //TODO: FIX
     private int id;
     protected double amountDue;
     protected double waitTime; // In minutes
     protected OrderInterface order;
     private boolean isServed;
-    private Restaurant restaurant;
+    private RestaurantInterface restaurant;
 
-    public Customer(Restaurant restaurant) {
+    public Customer(RestaurantInterface restaurant) {
         this.restaurant = restaurant;
-        runningID++;
-        id = runningID;
         amountDue = 0;
         order = new Order();
         isServed = false;
+        id = restaurant.getCustomerID();
     }
 
     @Override
     public void addToOrder(MenuItemInterface menu) {
         order.addMenuItem(menu);
+        amountDue = order.getTotalPrice();
     }
 
     @Override
     public OrderInterface placeOrder() {
-        amountDue = order.getTotalPrice();
         restaurant.addNewCustomer(this);
         return order;
     }
@@ -71,7 +69,7 @@ public abstract class Customer implements CustomerInterface {
         return isServed;
     }
 
-    public Restaurant getRestaurant() {
+    public RestaurantInterface getRestaurant() {
         return restaurant;
     }
 }

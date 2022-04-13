@@ -2,7 +2,7 @@ public class DeliveryCustomer extends Customer{
     private double distanceInKM;
     private static final double SPEED = 5;
 
-    public DeliveryCustomer(Restaurant restaurant, double distanceInKM) {
+    public DeliveryCustomer(RestaurantInterface restaurant, double distanceInKM) {
         super(restaurant);
         this.distanceInKM = distanceInKM;
     }

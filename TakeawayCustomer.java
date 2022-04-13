@@ -1,6 +1,6 @@
 
 public class TakeawayCustomer extends Customer{
-    public TakeawayCustomer(Restaurant restaurant) {
+    public TakeawayCustomer(RestaurantInterface restaurant) {
         super(restaurant);
     }
 

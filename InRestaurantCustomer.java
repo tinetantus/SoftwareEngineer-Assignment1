@@ -1,7 +1,7 @@
 public class InRestaurantCustomer extends Customer{
     boolean isPaid;
 
-    public InRestaurantCustomer(Restaurant restaurant) {
+    public InRestaurantCustomer(RestaurantInterface restaurant) {
         super(restaurant);
         isPaid = false;
         restaurant.addToUnpaidList(this);

@@ -6,4 +6,6 @@ public interface MenuItemInterface {
     public List<IngredientInterface> getIngredientList();
     public void addIngredient(IngredientInterface ingredient);
     public String getItemName();
+
+    public String getType();
 }

@@ -8,5 +8,6 @@ public interface RestaurantInterface {
     public void  takePayment(double amount);
     public void addNewCustomer(CustomerInterface customer);
     public void updateCustomerList();
-    public void updatePaymentList();
+    public void updatePaymentList(CustomerInterface customer);
+    public void addToUnpaidList(CustomerInterface customer);
 }

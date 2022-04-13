@@ -7,16 +7,22 @@ public class Restaurant implements RestaurantInterface{
     private List<CustomerInterface> customerList;
     private List<CustomerInterface> unpaidList;
 
+    private List<PricingInterface> discountList;
+
     public Restaurant(String name, List<IngredientInterface> ingredientList){
         customerList = new ArrayList<CustomerInterface>();
         unpaidList = new ArrayList<CustomerInterface>();
         income = 0;
         this.name = name;
+        discountList = new ArrayList<>();
     }
 
     @Override
     public void addNewCustomer(CustomerInterface customer) {
         customerList.add(customer);
+    }
+    @Override
+    public void addToUnpaidList(CustomerInterface customer) {
         unpaidList.add(customer);
     }
 
@@ -51,7 +57,15 @@ public class Restaurant implements RestaurantInterface{
     }
 
     @Override
-    public void updatePaymentList() {
-        unpaidList.remove(0);
+    public void updatePaymentList(CustomerInterface customer) {
+        unpaidList.remove(customer);
+    }
+
+    public List<PricingInterface> getDiscountList() {
+        return discountList;
+    }
+
+    public void addDiscountList(PricingInterface discount) {
+        discountList.add(discount);
     }
 }

@@ -1,22 +1,18 @@
-public class Customer implements CustomerInterface {
+public abstract class Customer implements CustomerInterface {
     private static int runningID = 0; //TODO: FIX
     private int id;
-    private String type; // ["InRestaurant", "Takeaway", "Delivery"]
-    private boolean isPaid;
-    private double amountDue;
-    private double waitTime; // In minutes
-    private OrderInterface order;
+    protected double amountDue;
+    protected double waitTime; // In minutes
+    protected OrderInterface order;
     private boolean isServed;
     private Restaurant restaurant;
 
-    public Customer(Restaurant restaurant, String type) {
-        this.type = type;
+    public Customer(Restaurant restaurant) {
         this.restaurant = restaurant;
         runningID++;
         id = runningID;
         amountDue = 0;
         order = new Order();
-        isPaid = false;
         isServed = false;
     }
 
@@ -28,29 +24,23 @@ public class Customer implements CustomerInterface {
     @Override
     public OrderInterface placeOrder() {
         amountDue = order.getTotalPrice();
-        if (!type.equalsIgnoreCase("InRestaurant")) {
-            makePayment();
-        }
+        restaurant.addNewCustomer(this);
         return order;
     }
 
     @Override
     public void makePayment() {
-        // TODO: Apply discount first
-        restaurant.updatePaymentList();
+        for (PricingInterface discount : restaurant.getDiscountList())
+            amountDue = discount.applyPricing(this);
+
+        restaurant.updatePaymentList(this);
         restaurant.takePayment(amountDue);
-        isPaid = true;
     }
 
     @Override
     public void getFood() {
         restaurant.updateCustomerList();
         isServed = true;
-    }
-
-    @Override
-    public boolean getPayStatus(){
-        return isPaid;
     }
 
     @Override
@@ -61,5 +51,27 @@ public class Customer implements CustomerInterface {
     @Override
     public double getWaitTime() {
         return waitTime;
+    }
+
+    @Override
+    public double getAmountDue() {
+        return amountDue;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public OrderInterface getOrder() {
+        return order;
+    }
+
+    public boolean isServed() {
+        return isServed;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 }

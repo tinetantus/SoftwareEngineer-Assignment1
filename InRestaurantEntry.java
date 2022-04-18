@@ -8,4 +8,8 @@ public class InRestaurantEntry extends Entry {
         customer = new InRestaurantCustomer(restaurant);
     }
 
+
+    public void makePayment(){
+        customer.makePayment();
+    }
 }

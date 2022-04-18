@@ -17,8 +17,8 @@ public class App {
         becky.createMenu(new MenuItem("Yummy Soup", beckyStuff.subList(4, 5), 15, MenuItem.ItemType.SIDE));
         becky.createMenu(new MenuItem("WomboCombo", beckyStuff, 50, MenuItem.ItemType.MAIN));
 
-        becky.createPricing(new BuyXGetYPricing(becky.getMenuItemList().get(3), 1, becky.getMenuItemList().get(0), 1));
-        becky.createPricing(new PercentPricing(10.0,"10% universal discount"));
+        becky.createPricing(new DeliveryCustomer.BuyXGetYPricing(becky.getMenuItemList().get(3), 1, becky.getMenuItemList().get(0), 1));
+        becky.createPricing(new DeliveryCustomer.PercentPricing(10.0,"10% universal discount"));
 
         DeliveryEntry deliveryWeb = new DeliveryEntry(becky);
         InRestaurantEntry inResWeb = new InRestaurantEntry(becky);
@@ -44,6 +44,8 @@ public class App {
         deliveryWeb.placeOrder();
         takeAwayWeb.placeOrder();
         inResWeb.placeOrder();
+
+        inResWeb.makePayment();
 
         printInfo(becky);
     }

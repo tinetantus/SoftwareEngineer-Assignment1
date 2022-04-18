@@ -1,6 +1,0 @@
-public interface PricingInterface {
-
-    public double applyPricing(CustomerInterface customer);
-    public String getFunction();
-    public void setFunction(String name);
-}

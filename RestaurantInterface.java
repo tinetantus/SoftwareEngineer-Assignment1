@@ -10,11 +10,11 @@ public interface RestaurantInterface {
     public void updateCustomerList();
     public void updatePaymentList(CustomerInterface customer);
     public void addToUnpaidList(CustomerInterface customer);
-    public List<PricingInterface> getDiscountList();
-    public void addDiscountList(PricingInterface discount);
+    public List<DeliveryCustomer.PricingInterface> getDiscountList();
+    public void addDiscountList(DeliveryCustomer.PricingInterface discount);
     public List<MenuItemInterface> getMenuItemList();
     public void addMenuItem(MenuItemInterface item);
     public int getCustomerID();
     public void createMenu(MenuItemInterface newItem);
-    public void createPricing(PricingInterface newPricing);
+    public void createPricing(DeliveryCustomer.PricingInterface newPricing);
 }

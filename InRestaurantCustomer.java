@@ -14,10 +14,8 @@ public class InRestaurantCustomer extends Customer{
     }
 
     @Override
-    public void makePayment(){
+    public void makePayment() {
         super.makePayment();
         isPaid = true;
     }
-
-
 }

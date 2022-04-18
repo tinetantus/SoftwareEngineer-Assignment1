@@ -28,7 +28,7 @@ public abstract class Customer implements CustomerInterface {
 
     @Override
     public void makePayment() {
-        for (PricingInterface discount : restaurant.getDiscountList())
+        for (DeliveryCustomer.PricingInterface discount : restaurant.getDiscountList())
             amountDue = discount.applyPricing(this);
 
         restaurant.updatePaymentList(this);

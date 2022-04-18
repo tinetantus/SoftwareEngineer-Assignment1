@@ -7,7 +7,7 @@ public class Restaurant implements RestaurantInterface{
     private List<CustomerInterface> customerList;
     private List<CustomerInterface> unpaidList;
     private List<MenuItemInterface> menuList;
-    private List<PricingInterface> discountList;
+    private List<DeliveryCustomer.PricingInterface> discountList;
     private int customerID;
 
     public Restaurant(String name, List<IngredientInterface> ingredientList){
@@ -26,7 +26,7 @@ public class Restaurant implements RestaurantInterface{
     }
 
     @Override
-    public void createPricing(PricingInterface newPricing) {
+    public void createPricing(DeliveryCustomer.PricingInterface newPricing) {
         discountList.add(newPricing);
     }
 
@@ -75,12 +75,12 @@ public class Restaurant implements RestaurantInterface{
     }
 
     @Override
-    public List<PricingInterface> getDiscountList() {
+    public List<DeliveryCustomer.PricingInterface> getDiscountList() {
         return discountList;
     }
 
     @Override
-    public void addDiscountList(PricingInterface discount) {
+    public void addDiscountList(DeliveryCustomer.PricingInterface discount) {
         discountList.add(discount);
     }
 

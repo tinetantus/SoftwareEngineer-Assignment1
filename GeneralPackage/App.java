@@ -1,3 +1,12 @@
+/**
+ * Group Num: 28
+ * Student Names: Dominic Verschoor i6267365, Tantus Choomphupan i6286789
+ *
+ */
+
+
+package GeneralPackage;
+
 import GeneralPackage.Customer.*;
 import GeneralPackage.Customer.Entry.*;
 import GeneralPackage.Restaurant.Products.*;

@@ -1,3 +1,8 @@
+package GeneralPackage.Customer;
+
+import GeneralPackage.Restaurant.Products.OrderInterface;
+import GeneralPackage.Restaurant.RestaurantInterface;
+
 public class InRestaurantCustomer extends Customer{
     boolean isPaid;
 

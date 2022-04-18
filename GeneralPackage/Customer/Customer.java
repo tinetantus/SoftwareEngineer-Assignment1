@@ -1,3 +1,10 @@
+package GeneralPackage.Customer;
+
+import GeneralPackage.Restaurant.Products.MenuItemInterface;
+import GeneralPackage.Restaurant.Products.Order;
+import GeneralPackage.Restaurant.Products.OrderInterface;
+import GeneralPackage.Restaurant.RestaurantInterface;
+
 public abstract class Customer implements CustomerInterface {
     private int id;
     protected double amountDue;

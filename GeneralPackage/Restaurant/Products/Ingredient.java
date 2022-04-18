@@ -1,3 +1,5 @@
+package GeneralPackage.Restaurant.Products;
+
 public class Ingredient implements IngredientInterface {
     private double price;
     private String name;

@@ -1,3 +1,8 @@
+import GeneralPackage.Customer.*;
+import GeneralPackage.Customer.Entry.*;
+import GeneralPackage.Restaurant.Products.*;
+import GeneralPackage.Restaurant.*;
+
 import java.util.ArrayList;
 
 public class App {

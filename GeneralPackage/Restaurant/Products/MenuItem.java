@@ -1,7 +1,9 @@
+package GeneralPackage.Restaurant.Products;
+
 import java.util.List;
 
 public class MenuItem implements MenuItemInterface {
-    enum ItemType{
+    public enum ItemType{
         DRINK {
             @Override
             public java.lang.String toString() {

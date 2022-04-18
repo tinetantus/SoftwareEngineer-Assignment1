@@ -1,3 +1,8 @@
+package GeneralPackage.Customer.Entry;
+
+import GeneralPackage.Customer.DeliveryCustomer;
+import GeneralPackage.Restaurant.RestaurantInterface;
+
 public class DeliveryEntry extends Entry{
     private double distance;
 

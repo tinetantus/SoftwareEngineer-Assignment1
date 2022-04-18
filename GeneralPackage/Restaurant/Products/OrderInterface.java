@@ -1,3 +1,5 @@
+package GeneralPackage.Restaurant.Products;
+
 import java.util.List;
 
 public interface OrderInterface {

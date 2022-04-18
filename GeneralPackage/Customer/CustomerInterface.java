@@ -1,3 +1,9 @@
+package GeneralPackage.Customer;
+
+import GeneralPackage.Restaurant.Products.MenuItemInterface;
+import GeneralPackage.Restaurant.Products.OrderInterface;
+import GeneralPackage.Restaurant.RestaurantInterface;
+
 public interface CustomerInterface {
     public void addToOrder(MenuItemInterface menu);
     public OrderInterface placeOrder();

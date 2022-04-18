@@ -1,3 +1,10 @@
+package GeneralPackage.Customer.Entry;
+
+import GeneralPackage.Customer.CustomerInterface;
+import GeneralPackage.Restaurant.Products.MenuItemInterface;
+import GeneralPackage.Restaurant.Products.OrderInterface;
+import GeneralPackage.Restaurant.RestaurantInterface;
+
 import java.util.List;
 
 public class Entry implements EntryInterface {

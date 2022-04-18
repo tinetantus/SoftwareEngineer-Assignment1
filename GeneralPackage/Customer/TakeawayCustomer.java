@@ -1,3 +1,7 @@
+package GeneralPackage.Customer;
+
+import GeneralPackage.Restaurant.Products.OrderInterface;
+import GeneralPackage.Restaurant.RestaurantInterface;
 
 public class TakeawayCustomer extends Customer{
     public TakeawayCustomer(RestaurantInterface restaurant) {

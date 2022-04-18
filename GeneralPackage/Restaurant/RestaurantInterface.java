@@ -1,3 +1,7 @@
+package GeneralPackage.Restaurant;
+import GeneralPackage.Customer.*;
+import GeneralPackage.Restaurant.Products.*;
+
 import java.util.List;
 
 public interface RestaurantInterface {

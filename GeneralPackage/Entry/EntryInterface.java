@@ -1,6 +1,5 @@
 package GeneralPackage.Entry;
 
-import GeneralPackage.Waiter.WaiterInterface;
 import java.util.List;
 
 public interface EntryInterface {

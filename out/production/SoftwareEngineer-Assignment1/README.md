@@ -2,7 +2,7 @@
 1. Create an ingredients list
 2. Create a restaurant that uses ingredients list
 3. Use the restaurant to create a menu
-4. (Optional) Create Pricing changes through the restaurant
+4. (Optional) Create GeneralPackage.Kitchen.Pricing changes through the restaurant
 
 **Simulation of ordering Process**
 1. Create a customer depending on their ordering type when they make an entry (take away, delivery, in-restaurant)

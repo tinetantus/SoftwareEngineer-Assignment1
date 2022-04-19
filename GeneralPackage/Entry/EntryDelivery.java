@@ -1,7 +1,6 @@
 package GeneralPackage.Entry;
 
 import GeneralPackage.Kitchen.KitchenInterface;
-import GeneralPackage.Waiter.WaiterInterface;
 
 public class EntryDelivery extends Entry{
     public EntryDelivery(KitchenInterface kitchen) {

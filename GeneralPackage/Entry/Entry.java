@@ -49,4 +49,9 @@ public abstract class Entry implements EntryInterface {
     public double getWaitTime() {
         return kitchen.getWaitTime();
     }
+
+    @Override
+    public void setDistance(double distance) {
+        distance = 0;
+    }
 }

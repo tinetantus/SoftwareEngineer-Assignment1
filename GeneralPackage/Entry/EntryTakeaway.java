@@ -13,6 +13,4 @@ public class EntryTakeaway extends Entry{
         double amountDue = getPaymentSummary();
         makePayment(amountDue);
     }
-
-
 }

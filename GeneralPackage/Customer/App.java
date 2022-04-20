@@ -39,61 +39,87 @@ public class App {
 
     }
 
+    //delivery scenario
     public static void deliverySequence(KitchenInterface kitchen) {
+        //Enters online website
         Entry entry = new EntryDelivery(kitchen);
 
+        //Entry sends the menu to the customer
         entry.getMenuList();
 
+        //add items to the order through entry
         entry.addToMenu("Item1");
         entry.addToMenu("Item2");
 
+        //input the distance (address) through entry
         entry.setDistance(10);
 
+        //Place order through entry (this calls the paying method as well)
         entry.placeOrder();
 
+        //Entry sends the wait time to the customer
         entry.getWaitTime();
     }
 
+    //Take away scenario
     public static void takeawaySequence(KitchenInterface kitchen) {
+        //Enters online website
         Entry entry = new EntryTakeaway(kitchen);
 
+        //Entry sends the menu to the customer
         entry.getMenuList();
 
+        //add items to the order through entry
         entry.addToMenu("Item1");
         entry.addToMenu("Item2");
 
+        //Place order through entry (this calls the paying method as well)
         entry.placeOrder();
 
+        //Entry sends the wait time to the customer
         entry.getWaitTime();
     }
 
+    //In Restaurant scenario
     public static void inRestuarantSequence(KitchenInterface kitchen) {
+        //Enter site through QR (from in the restaurant
         Entry entry = new EntryInRestuarant(kitchen);
 
+        //Entry sends the menu to the customer
         entry.getMenuList();
 
+        //add items to the order through entry
         entry.addToMenu("Item1");
         entry.addToMenu("Item2");
 
+        //Place order through entry
         entry.placeOrder();
+        //Entry sends the wait time to the customer
+        entry.getWaitTime();
 
+        //Customer gets a payment summary (when asked for)
         double amountDue = entry.getPaymentSummary();
+        //Customer pays through the site (when wanted to)
         entry.makePayment(amountDue);
 
-        entry.getWaitTime();
     }
 
+    //Waiter scenario
     public static void inResWaiterSequence(KitchenInterface kitchen) {
-
+        //Ordering through waiter physically
         WaiterInterface waiter = new Waiter(kitchen);
 
+        //Waiter adds items to order
         waiter.addToMenu("Item2");
         waiter.addToMenu("Item3");
         waiter.addToMenu("Item1");
 
+        // waiter places the order
         waiter.placeOrder();
 
+        // get a payment summary from the waiter
         double amountDue = waiter.getPaymentSummary();
+        //pay the waiter
         waiter.makePayment(amountDue);
     }
 }
